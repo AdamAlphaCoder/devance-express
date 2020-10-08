@@ -2,6 +2,10 @@
 
 > Node.js TODO app with Express.js
 
+## Pending Todos
+
+1. Add MySQL database creation instructions
+
 ## Build Setup
 
 ```bash
