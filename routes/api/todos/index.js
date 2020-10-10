@@ -5,7 +5,7 @@ const { models } = require('../../../sequelize')
 // LIST ALL TODOS
 router.get('/', async (req, res) => {
   try {
-    const todos = await models.todo.findAll()
+    const todos = await models.todo.findAll({ include: [models.user] })
 
     res.json({
       success: true,

@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const morgan = require('morgan')
 const helmet = require('helmet')
 
@@ -18,6 +19,7 @@ async function start () {
     // Create express instnace
     const app = express()
     app.set('port', port)
+    app.use(cors())
     app.use(helmet())
     app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'))
     app.use(express.json())
